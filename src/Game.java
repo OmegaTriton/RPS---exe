@@ -28,7 +28,12 @@ public class Game implements KeyListener, ActionListener{
       panel.change_layer(0);
       long optimal_time = 1000000000/TARGET_FPS;
       while(score1 < 3 && score2 < 3){
-        pickPlayers();
+        Thread.yield();
+        players[0] = new Rock(panel, frame, 0 + 500*currentPlayerSelect, 400, currentPlayerSelect);
+        currentPlayerSelect++;
+        players[1] = new Rock(panel, frame, 0 + 500*currentPlayerSelect, 400, currentPlayerSelect);
+        currentPlayerSelect--;
+        //pickPlayers();
         countdown();
         started = true;
       while(!players[0].isDead() && !players[1].isDead()){
@@ -109,11 +114,11 @@ public class Game implements KeyListener, ActionListener{
   private void pickPlayers(){
     panel.show(1);
     pick_char[1].setVisible(false);
-    while(currentPlayerSelect == 0)System.out.print("");
+    while(currentPlayerSelect == 0){Thread.yield();System.out.print("");}
     players[0].setVisible(false);
     pick_char[0].setVisible(false);
     pick_char[1].setVisible(true);
-    while(currentPlayerSelect == 1)System.out.print("");
+    while(currentPlayerSelect == 1){Thread.yield();System.out.print("");}
     players[1].setVisible(false);
     currentPlayerSelect = 0;
     panel.hide(1);

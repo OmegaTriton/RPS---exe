@@ -74,8 +74,10 @@ public class LayeredPanel extends JPanel{
     if(layer >= 0 && layer < panels.size()){
       currentLayer = layer;
       for(int i = 0; i < panels.size(); i++){
+        Thread.yield();
         visible[i] = i == layer;
         for(int j = 0; j < panels.get(i).size(); j++){
+          Thread.yield();
           panels.get(i).get(j).setVisible(i == layer);
         }
       }
