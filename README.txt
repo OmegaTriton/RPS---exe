@@ -1,3 +1,9 @@
+This Repo is dedicated to trying to convert my java game
+into various other forms such as:
+.jar
+.exe
+web through cheerpJ
+
 To run this you must have Java installed.
 Use a code IDE, such as Visual Studio Code, to compile/run the code.
 

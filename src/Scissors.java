@@ -1,4 +1,3 @@
-package src;
 import javax.swing.*;
 import java.awt.Image;
 import java.awt.event.KeyEvent;
@@ -22,9 +21,9 @@ public class Scissors extends Player{
   public static final double dash_dmg = 1.5;
 
   public Scissors(LayeredPanel p, JFrame f, int x, int y, int play_num){
-    super(p, f, "images\\scissors pixel.png", f.getWidth()*5/500, 45, 15, 24, play_num);
-    left_dashing = new ImageIcon("images\\scissors pixel left dash.gif");
-    right_dashing = new ImageIcon("images\\scissors pixel right dash.gif");
+    super(p, f, "/images/scissors pixel.png", f.getWidth()*5/500, 45, 15, 24, play_num);
+    left_dashing = new ImageIcon("/images/scissors pixel left dash.gif");
+    right_dashing = new ImageIcon("/images/scissors pixel right dash.gif");
     dash_width = ((Double) (left_dashing.getIconWidth() * f.getWidth()*5.0/500)).intValue();
     dash_height = ((Double) (left_dashing.getIconHeight() * f.getHeight()*5.0/400)).intValue();
     left_dashing = new ImageIcon(left_dashing.getImage().getScaledInstance(dash_width, dash_height, Image.SCALE_DEFAULT));

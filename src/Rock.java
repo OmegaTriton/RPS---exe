@@ -1,4 +1,3 @@
-package src;
 import javax.swing.*;
 import java.awt.event.KeyEvent;
 
@@ -9,7 +8,7 @@ public class Rock extends Player{
   public static final double paper_damage = 2.5;
 
   public Rock(LayeredPanel p, JFrame f, int x, int y, int play_num){
-    super(p, f, "images\\rock pixel.png", 6.5, 75, 10, 32, play_num);
+    super(p, f, "/images/rock pixel.png", 6.5, 75, 10, 32, play_num);
     setLocation(1,0);
     setLocation(x,y);
   }

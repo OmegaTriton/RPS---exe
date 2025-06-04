@@ -1,4 +1,3 @@
-package src;
 import javax.swing.*;
 import java.awt.Color;
 import java.awt.Font;
@@ -70,6 +69,7 @@ public class Game implements KeyListener, ActionListener{
         }
         long update_time = System.nanoTime()-now;
         long wait = (optimal_time-update_time)/100000;//nano -> milli
+        Thread.yield();
         try{
           Thread.sleep(wait);
         }catch(Exception e){
@@ -185,9 +185,9 @@ public class Game implements KeyListener, ActionListener{
     exit = new Button("Exit", this, new Color(0, 73, 144), new Color(173, 200, 255), new Font("Ariel", Font.BOLD, 50), 125, 275, 250, 90);
     panel.add(exit, 3);
 
-    rock = new Button("images\\rock pixel.png", this, 30, 200, 6.5, panel);
-    paper = new Button("images\\paper pixel.png", this, 220, 200, 7.5, panel);
-    scissor = new Button("images\\scissors pixel.png", this, 360, 200, 5, panel);
+    rock = new Button("/images/rock pixel.png", this, 30, 200, 6.5, panel);
+    paper = new Button("/images/paper pixel.png", this, 220, 200, 7.5, panel);
+    scissor = new Button("/images/scissors pixel.png", this, 360, 200, 5, panel);
     
     panel.add(rock, 1);
     panel.add(paper, 1);
