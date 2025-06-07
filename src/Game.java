@@ -29,11 +29,7 @@ public class Game implements KeyListener, ActionListener{
       long optimal_time = 1000000000/TARGET_FPS;
       while(score1 < 3 && score2 < 3){
         Thread.yield();
-        players[0] = new Rock(panel, frame, 0 + 500*currentPlayerSelect, 400, currentPlayerSelect);
-        currentPlayerSelect++;
-        players[1] = new Rock(panel, frame, 0 + 500*currentPlayerSelect, 400, currentPlayerSelect);
-        currentPlayerSelect--;
-        //pickPlayers();
+        pickPlayers();
         countdown();
         started = true;
       while(!players[0].isDead() && !players[1].isDead()){
